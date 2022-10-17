@@ -4,12 +4,15 @@ import Card from './Card'
 function CardList({ robots }) {
     const cardsArray = robots.map((user, i) => {
         return (
-
-        <Card id={robots[i].id} name={robots[i].name} email={robots[i].email} />
+        <Card 
+        key={i} 
+        id={robots[i].id}
+        name={robots[i].name} 
+        email={robots[i].email} />
         )
     })
   return (
-    <div className='flex-col mx-auto items-center justify-center'>
+    <div className='md:grid md:grid-rows-2 md:grid-flow-col flex-col gap-4 items-center justify-center'>
         {cardsArray}
     </div>
   )

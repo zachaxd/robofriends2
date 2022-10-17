@@ -6,9 +6,9 @@ function Card({name, email, id}) {
     hover:-translate-y-2 transition-transform ease-in-out
     shadow-xl text-center'>
         <img src={`https://robohash.org/${id}?200x200`} alt="" 
-        className=''/>
+        className='mx-auto h-40'/>
         <div>
-            <h2 className='text-2xl font-bold'>
+            <h2 className='text-xl font-bold'>
                 {name}
             </h2>
             <p>
