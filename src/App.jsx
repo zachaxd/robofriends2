@@ -8,9 +8,16 @@ class App extends Component {
     constructor() {
         super()
         this.state ={
-            robots: robots,
+            robots: [],
             searchfield: '',
         }
+    }
+
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response=> response.json())
+        .then(users => this.setState({ robots: users }));  
+        
     }
 
     onSearchChange = (event) => {
@@ -23,7 +30,7 @@ class App extends Component {
     })
     return (
         
-    <div className='flex-col text-center p-8 bg-black'>
+    <div className='flex-col text-center p-8 bg-white'>
         <h1 className='text-8xl text-indigo-400 font-bold mb-8'>Robofriends</h1>
         <SearchBox searchChange={this.onSearchChange}/>
         <CardList robots={filteredRobots} />
