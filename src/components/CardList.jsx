@@ -12,7 +12,7 @@ function CardList({ robots }) {
         )
     })
   return (
-    <div className='md:grid md:grid-rows-2 md:grid-flow-col flex-col gap-4 items-center justify-center'>
+    <div className='flex-col gap-4 items-center justify-center'>
         {cardsArray}
     </div>
   )
